@@ -1,0 +1,202 @@
+[2020-11-06 19:13:42,433] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.8/site-packages/multiqc_config.yaml
+[2020-11-06 19:13:42,433] multiqc                                            [DEBUG  ]  No MultiQC config found: /root/.multiqc_config.yaml
+[2020-11-06 19:13:42,433] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2020-11-06 19:13:42,433] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc 1_trim/trimmed/paired/ -o 1_trim/trimmed/paired/fastqc/
+[2020-11-06 19:13:43,045] multiqc                                            [DEBUG  ]  Latest MultiQC version is v1.9
+[2020-11-06 19:13:43,045] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2020-11-06 19:13:43,046] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc 1_trim/trimmed/paired/ -o 1_trim/trimmed/paired/fastqc/
+[2020-11-06 19:13:43,046] multiqc                                            [DEBUG  ]  Working dir : /media/jochum00/Aagaard_Raid3/jochum_IHCP
+[2020-11-06 19:13:43,046] multiqc                                            [INFO   ]  Template    : default
+[2020-11-06 19:13:43,046] multiqc                                            [DEBUG  ]  Running Python 3.8.3 (default, Jul  2 2020, 16:21:59)  [GCC 7.3.0]
+[2020-11-06 19:13:43,046] multiqc                                            [INFO   ]  Searching   : /media/jochum00/Aagaard_Raid3/jochum_IHCP/1_trim/trimmed/paired
+[2020-11-06 19:13:43,048] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2020-11-06 19:13:43,049] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpa22ol0j3
+[2020-11-06 19:13:43,147] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.1603.trim_2.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.4130.trim_2.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.3482.trim_2.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.1143.trim_2.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.536.trim_1.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.1195.trim_1.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.3908.trim_1.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.1084.trim_2.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.1195.trim_2.fastq
+[2020-11-06 19:13:43,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.1603.trim_1.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.7260.trim_1.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.3482.trim_1.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.6347.trim_1.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.3908.trim_2.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.536.trim_2.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.4130.trim_1.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.1143.trim_1.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.7260.trim_2.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.4804.trim_2.fastq
+[2020-11-06 19:13:43,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.385.trim_2.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.6890.trim_1.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.385.trim_1.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.6890.trim_2.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.7830.trim_1.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.Kit.Neg.trim_1.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.7830.trim_2.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.Kit.Neg.trim_2.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.1084.trim_1.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.6347.trim_2.fastq
+[2020-11-06 19:13:43,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Aagaard.4804.trim_1.fastq
+[2020-11-06 19:13:43,179] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.4130.trim_1_fastqc.html
+[2020-11-06 19:13:43,182] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.4130.trim_1_fastqc.html
+[2020-11-06 19:13:43,219] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.1084.trim_1_fastqc.html
+[2020-11-06 19:13:43,221] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.1084.trim_1_fastqc.html
+[2020-11-06 19:13:43,255] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.536.trim_1_fastqc.html
+[2020-11-06 19:13:43,257] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.536.trim_1_fastqc.html
+[2020-11-06 19:13:43,292] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.4804.trim_2_fastqc.html
+[2020-11-06 19:13:43,293] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.4804.trim_2_fastqc.html
+[2020-11-06 19:13:43,326] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.7260.trim_2_fastqc.html
+[2020-11-06 19:13:43,328] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.7260.trim_2_fastqc.html
+[2020-11-06 19:13:43,364] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.4804.trim_1_fastqc.html
+[2020-11-06 19:13:43,365] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.4804.trim_1_fastqc.html
+[2020-11-06 19:13:43,399] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.3908.trim_1_fastqc.html
+[2020-11-06 19:13:43,401] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.3908.trim_1_fastqc.html
+[2020-11-06 19:13:43,434] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.385.trim_1_fastqc.html
+[2020-11-06 19:13:43,436] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.385.trim_1_fastqc.html
+[2020-11-06 19:13:43,470] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.6890.trim_1_fastqc.html
+[2020-11-06 19:13:43,472] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.6890.trim_1_fastqc.html
+[2020-11-06 19:13:43,505] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.7830.trim_2_fastqc.html
+[2020-11-06 19:13:43,507] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.7830.trim_2_fastqc.html
+[2020-11-06 19:13:43,540] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.536.trim_2_fastqc.html
+[2020-11-06 19:13:43,542] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.536.trim_2_fastqc.html
+[2020-11-06 19:13:43,575] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.3482.trim_1_fastqc.html
+[2020-11-06 19:13:43,577] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.3482.trim_1_fastqc.html
+[2020-11-06 19:13:43,612] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.1603.trim_1_fastqc.html
+[2020-11-06 19:13:43,613] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.1603.trim_1_fastqc.html
+[2020-11-06 19:13:43,647] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.3482.trim_2_fastqc.html
+[2020-11-06 19:13:43,649] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.3482.trim_2_fastqc.html
+[2020-11-06 19:13:43,683] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.1084.trim_2_fastqc.html
+[2020-11-06 19:13:43,685] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.1084.trim_2_fastqc.html
+[2020-11-06 19:13:43,718] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.1143.trim_2_fastqc.html
+[2020-11-06 19:13:43,720] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.1143.trim_2_fastqc.html
+[2020-11-06 19:13:43,754] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.6890.trim_2_fastqc.html
+[2020-11-06 19:13:43,755] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.6890.trim_2_fastqc.html
+[2020-11-06 19:13:43,789] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.1195.trim_1_fastqc.html
+[2020-11-06 19:13:43,791] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.1195.trim_1_fastqc.html
+[2020-11-06 19:13:43,825] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.6347.trim_1_fastqc.html
+[2020-11-06 19:13:43,827] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.6347.trim_1_fastqc.html
+[2020-11-06 19:13:43,861] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.6347.trim_2_fastqc.html
+[2020-11-06 19:13:43,863] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.6347.trim_2_fastqc.html
+[2020-11-06 19:13:43,897] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.1603.trim_2_fastqc.html
+[2020-11-06 19:13:43,898] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.1603.trim_2_fastqc.html
+[2020-11-06 19:13:43,934] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.385.trim_2_fastqc.html
+[2020-11-06 19:13:43,936] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.385.trim_2_fastqc.html
+[2020-11-06 19:13:43,970] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.4130.trim_2_fastqc.html
+[2020-11-06 19:13:43,971] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.4130.trim_2_fastqc.html
+[2020-11-06 19:13:44,007] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.7830.trim_1_fastqc.html
+[2020-11-06 19:13:44,008] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.7830.trim_1_fastqc.html
+[2020-11-06 19:13:44,045] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.1143.trim_1_fastqc.html
+[2020-11-06 19:13:44,046] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.1143.trim_1_fastqc.html
+[2020-11-06 19:13:44,082] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.Kit.Neg.trim_2_fastqc.html
+[2020-11-06 19:13:44,083] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.Kit.Neg.trim_2_fastqc.html
+[2020-11-06 19:13:44,125] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.7260.trim_1_fastqc.html
+[2020-11-06 19:13:44,126] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.7260.trim_1_fastqc.html
+[2020-11-06 19:13:44,166] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.Kit.Neg.trim_1_fastqc.html
+[2020-11-06 19:13:44,167] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.Kit.Neg.trim_1_fastqc.html
+[2020-11-06 19:13:44,209] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.1195.trim_2_fastqc.html
+[2020-11-06 19:13:44,210] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.1195.trim_2_fastqc.html
+[2020-11-06 19:13:44,244] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Aagaard.3908.trim_2_fastqc.html
+[2020-11-06 19:13:44,246] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Aagaard.3908.trim_2_fastqc.html
+[2020-11-06 19:13:44,599] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.2.2
+[2020-11-06 19:13:44,599] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.2.2
+[2020-11-06 19:13:44,600] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2020-11-06 19:13:44,604] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2020-11-06 19:13:44,607] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2020-11-06 19:13:44,611] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2020-11-06 19:13:44,615] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2020-11-06 19:13:44,619] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2020-11-06 19:13:44,623] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2020-11-06 19:13:44,626] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2020-11-06 19:13:44,630] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2020-11-06 19:13:44,633] multiqc                                            [DEBUG  ]  No samples found: quast
+[2020-11-06 19:13:44,637] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2020-11-06 19:13:44,641] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2020-11-06 19:13:44,644] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2020-11-06 19:13:44,648] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2020-11-06 19:13:44,653] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2020-11-06 19:13:44,657] multiqc                                            [DEBUG  ]  No samples found: busco
+[2020-11-06 19:13:44,660] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2020-11-06 19:13:44,664] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2020-11-06 19:13:44,667] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2020-11-06 19:13:44,673] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2020-11-06 19:13:44,676] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2020-11-06 19:13:44,680] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2020-11-06 19:13:44,683] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2020-11-06 19:13:44,687] multiqc                                            [DEBUG  ]  No samples found: happy
+[2020-11-06 19:13:44,690] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2020-11-06 19:13:44,694] multiqc                                            [DEBUG  ]  No samples found: homer
+[2020-11-06 19:13:44,698] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2020-11-06 19:13:44,701] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2020-11-06 19:13:44,705] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2020-11-06 19:13:44,709] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2020-11-06 19:13:44,713] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2020-11-06 19:13:44,716] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2020-11-06 19:13:44,720] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2020-11-06 19:13:44,724] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2020-11-06 19:13:44,730] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2020-11-06 19:13:44,733] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2020-11-06 19:13:44,737] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2020-11-06 19:13:44,744] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2020-11-06 19:13:44,748] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2020-11-06 19:13:44,751] multiqc                                            [DEBUG  ]  No samples found: picard
+[2020-11-06 19:13:44,754] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2020-11-06 19:13:44,758] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2020-11-06 19:13:44,762] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2020-11-06 19:13:44,766] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2020-11-06 19:13:44,769] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2020-11-06 19:13:44,773] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2020-11-06 19:13:44,778] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2020-11-06 19:13:44,781] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2020-11-06 19:13:44,785] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2020-11-06 19:13:44,788] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2020-11-06 19:13:44,794] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2020-11-06 19:13:44,797] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2020-11-06 19:13:44,801] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2020-11-06 19:13:44,805] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2020-11-06 19:13:44,808] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2020-11-06 19:13:44,812] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2020-11-06 19:13:44,815] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2020-11-06 19:13:44,819] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2020-11-06 19:13:44,822] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2020-11-06 19:13:44,826] multiqc                                            [DEBUG  ]  No samples found: star
+[2020-11-06 19:13:44,829] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2020-11-06 19:13:44,833] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2020-11-06 19:13:44,836] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2020-11-06 19:13:44,840] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2020-11-06 19:13:44,843] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2020-11-06 19:13:44,847] multiqc                                            [DEBUG  ]  No samples found: kat
+[2020-11-06 19:13:44,850] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2020-11-06 19:13:44,854] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2020-11-06 19:13:44,857] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2020-11-06 19:13:44,861] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2020-11-06 19:13:44,864] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2020-11-06 19:13:44,868] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2020-11-06 19:13:44,871] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2020-11-06 19:13:44,875] multiqc                                            [DEBUG  ]  No samples found: malt
+[2020-11-06 19:13:44,878] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2020-11-06 19:13:44,882] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2020-11-06 19:13:44,885] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2020-11-06 19:13:44,889] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2020-11-06 19:13:44,892] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2020-11-06 19:13:44,896] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2020-11-06 19:13:44,899] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2020-11-06 19:13:44,903] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2020-11-06 19:13:45,829] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 30 reports
+[2020-11-06 19:13:46,452] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2020-11-06 19:13:46,455] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2020-11-06 19:13:46,459] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2020-11-06 19:13:46,462] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2020-11-06 19:13:46,466] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2020-11-06 19:13:46,470] multiqc                                            [DEBUG  ]  No samples found: interop
+[2020-11-06 19:13:46,473] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2020-11-06 19:13:46,477] multiqc                                            [DEBUG  ]  No samples found: flash
+[2020-11-06 19:13:46,480] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2020-11-06 19:13:46,530] multiqc                                            [INFO   ]  Compressing plot data
+[2020-11-06 19:13:47,341] multiqc                                            [INFO   ]  Report      : 1_trim/trimmed/paired/fastqc/multiqc_report.html
+[2020-11-06 19:13:47,341] multiqc                                            [INFO   ]  Data        : 1_trim/trimmed/paired/fastqc/multiqc_data
+[2020-11-06 19:13:47,341] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpa22ol0j3/multiqc_data' to '1_trim/trimmed/paired/fastqc/multiqc_data'
+[2020-11-06 19:13:47,476] multiqc                                            [INFO   ]  MultiQC complete
