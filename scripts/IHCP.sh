@@ -109,12 +109,16 @@ done
 
 ###############KRAKEN2/BRACKEN##################################
 
+#docker run -it -v /media/jochum00:/media/jochum00 --name k2 tbattaglia/kraken2 bash
+WORK=/media/jochum00/Aagaard_Raid3/jochum_IHCP;
+cd $WORK;
+
 mkdir -p $PWD/4_kraken2/classified;
 mkdir -p $PWD/4_kraken2/unclassified;
 mkdir -p $PWD/4_kraken2/reports;
 mkdir -p $PWD/4_kraken2/kraken2_out;
 
-for n in $li
+for n in  in $(cat manifest);
 do
 	echo "Running Kraken2 on $n";
 	kraken2 \
@@ -131,4 +135,61 @@ do
 #	$PWD/2_filter/unaligned/$n.singletons.nonhuman.fastq; 
 	echo "Kraken2 complete on $n";
 done
+
+###############BRACKEN################
+for n in $(cat  manifest) 
+do
+bracken \
+-d  /media/jochum00/Aagaard_Raid/reference_datasets/kraken2_db/ \
+-i 4_kraken2/reports/$n.kreport \
+-o 5_bracken/bracken_out/$n.bracken \
+-w 5_bracken/reports/$n.breport \
+-r 100 \
+-t 1 \
+-l S
+done
+
+###############FILTER_BRACKEN.PY################
+for n in $(cat manifest); 
+do
+#NOTE: There are still human reads in this output that somehow passed through kneaddata
+# We will now extract these reads and phix-174 using KrakenTools with taxid 2759 (Eukaryota),9606(human), and 10847(phix) 
+python /media/jochum00/Aagaard_Raid/reference_datasets/KrakenTools/filter_bracken.out.py \
+-i  5_bracken/bracken_out/$n.bracken \
+-o  5_bracken/bracken_out/filt/$n.filt.bracken \
+--exclude 9606 2759 10847
+done
+
+
+##############BIT-COMBINE-AND-ADD-LINEAGE###############
+for n in $(cat manifest); 
+do
+# putting a few of the bracken output file names into a file 
+ls 5_bracken/bracken_out/filt/$n.filt.bracken>>files;
+cat files|cut -f1 -d ".">names;
+paste -d "\t" files names>>5_bracken/filt.bracken-outputs.tsv;
+rm files;
+rm names;
+# removing the info that is the same for all in this case
+done
+
+3.25 2.375 2.375 saving $85.00
 ###############EXTRACT_KRAKEN2_READS.PY################
+ls |cut -f2 -d".">names
+/media/jochum00/Aagaard_Raid/reference_datasets/KrakenTools/combine_kreports.py -r $(ls *.kreport) -o combined.kreport --no-headers --sample-names $(cat names)
+
+
+
+for n 
+kraken2 --db KRAKEN2DB --threads THREADNUM --report MYSAMPLE.KREPORT \
+    --paired SAMPLE_1.FASTA SAMPLE_2.FASTA > MYSAMPLE.KRAKEN2
+python kreport2mpa.py -r MYSAMPLE.KREPORT -o MYSAMPLE.MPA.TXT 
+
+
+#NOTE: Now we convert the bracken report to mpa style
+kreport2mpa.py \
+-r 23862_6.paired.std.filt.breport \
+-o 23862_6.paired.std.filt.mpa.percentages.breport \
+--display-header \
+--percentages \
+--no-intermediate-ranks

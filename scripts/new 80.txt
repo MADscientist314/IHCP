@@ -1,0 +1,199 @@
+rm -rf metacompass_results/*
+for n in $(cat list)
+do
+python3 /media/jochum00/Aagaard_Raid/reference_datasets/MetaCompass/go_metacompass.py \
+	-r /media/jochum00/Aagaard_Raid/BioGaia_project/BioGaiaStrains/L.Reuteri.SD2112.fasta \
+	-1 $n\_paired_1.fastq.gz \
+	-2 $n\_paired_2.fastq.gz \
+	-U $n\_unmatched_1.fastq.gz,$n\_unmatched_2.fastq.gz \
+	-o metacompass_results/$n \
+	-t 24
+echo $n complete;
+donecd /media/jochum00/Aagaard_Raid/BioGaia_project/BioGaiaStrains/L
+
+docker run -it -v /media/jochum00:/media/jochum00 --name kraken2 aangeloo/kraken2 bash
+cd /media/jochum00/Aagaard_Raid/BioGaia_project/combined/filtered
+
+
+####################AG1#######################
+
+DBNAME=/media/jochum00/Jochum_3/kraken2_std2
+THREADS=48
+NODE=ag1
+
+for n in $(cat $NODE)
+do 
+	echo "running kraken2 on $n"; 
+	kraken2 \
+	--db $DBNAME \
+	--threads $THREADS \
+	--paired \
+	--classified-out kraken2/classified/cseqs.$n.#.fastq \
+	--output kraken2/$n.kraken2 \
+	--report kraken2/$n.kreport \
+	--use-names \
+	--gzip-compressed \
+	$n"_paired_1.fastq.gz" $n"_paired_2.fastq.gz"; \
+done
+
+
+################################################################
+###############KRAKEN2/BRACKEN##################################
+################################################################
+
+####################AG3#######################
+
+DBNAME=/media/jochum00/sdc/kraken2_std2
+THREADS=48
+NODE=ag3
+
+for n in $(cat $NODE)
+do 
+	echo "running kraken2 on $n"; 
+	kraken2 \
+	--db $DBNAME \
+	--threads $THREADS \
+	--paired \
+	--classified-out kraken2/classified/cseqs.$n.#.fastq \
+	--output kraken2/$n.kraken2 \
+	--report kraken2/$n.kreport \
+	--use-names \
+	--gzip-compressed \
+	$n"_paired_1.fastq.gz" $n"_paired_2.fastq.gz"; \
+done
+
+
+
+###############BRACKEN################
+for n in $(cat list) 
+do
+bracken \
+-d  $DBNAME \
+-i kraken2/$n.kreport \
+-o bracken/$n.bracken \
+-w bracken/$n.breport \
+-r 150 \
+-t 1 \
+-l S
+done
+###############FILTER_BRACKEN.PY################
+for n in $(cat list); 
+do
+#NOTE: There are still human reads in this output that somehow passed through kneaddata
+# We will now extract these reads and phix-174 using KrakenTools with taxid 2759 (Eukaryota),9606(human), and 10847(phix) 
+python /media/jochum00/Aagaard_Raid/reference_datasets/KrakenTools/filter_bracken.out.py \
+-i bracken/$n.bracken \
+-o bracken/$n.filt.bracken \
+--exclude 9606 2759 10847
+done
+
+
+##############BIT-COMBINE-AND-ADD-LINEAGE###############
+for n in $(cat list); 
+do
+# putting a few of the bracken output file names into a file 
+ls bracken/$n.filt.bracken>f;
+cat f|cut -f1 -d ".">n;
+paste -d "\t" f n>>bracken/test-bracken-outputs.tsv;
+rm f;
+rm n;
+# removing the info that is the same for all in this case
+done
+
+
+#This only works on aagaardlab3 for some reason, and I dont have time to 
+#figure out why so I am gonna just logout of the docker container and logging
+#to the aagaardlab3 machine and use the bit that already installed in conda
+bit-update-ncbi-taxonomy
+
+bit-combine-bracken-and-add-lineage \
+-i bracken/test-bracken-outputs.tsv \
+-o bracken/test-combined-bracken-outputs-with-lineages.tsv
+
+#########REGEX TO SEPERATE NUM AND FRACS###########
+
+#cut out the taxonomy part do its just the numbers and put that into a new file called counts
+cat test-combined-bracken-outputs-with-lineages.tsv |cut -f10- >counts.tsv
+cat test-combined-bracken-outputs-with-lineages.tsv |cut -f1-10 >tax.tsv
+#nums
+
+awk '{for(i=1;i<=NF;i=i+2){printf "%s ", $i}{printf "%s", RS}}' counts.tsv >num.tsv
+awk '{for(i=2;i<=NF;i=i+2){printf "%s ", $i}{printf "%s", RS}}' counts.tsv >frac.tsv
+
+#awk '{for(i=1;i<=NF;i=i+2){printf "%s ", $i}{printf "%s", RS}}' test-combined-bracken-outputs-with-lineages.tsv >num.tsv
+
+paste tax.tsv num>num_combined-bracken-outputs-with-lineages.tsv
+#fracs
+awk '{for(i=11;i<=NF;i=i+2){printf "%s ", $i}{printf "%s", RS}}' test-combined-bracken-outputs-with-lineages.tsv >frac
+paste tax frac>frac_combined-bracken-outputs-with-lineages.tsv
+
+
+
+###############EXTRACT_KRAKEN2_READS.PY################
+#NOTE: There are still human reads in this output that somehow passed through kneaddata
+# We will now extract these reads matching Lactobacillus reuterrri for comparsion 
+# I tried filt_bracken.py but I this way is better for the workflow,
+# because you cant make_report.py on a .bracken file bc of the "txnmy lvl error"
+# Lactobacillus reuteri SD2112 #491077
+# Lactobacillus reuteri1 #1589
+# Lactobacillus #1578
+for n in $(cat list)
+do
+	lbzip2 -d $n\_paired_1.fastq.gz;
+	lbzip2 -d $n\_paired_2.fastq.gz;
+	
+	/media/jochum00/Aagaard_Raid/reference_datasets/KrakenTools/extract_kraken_reads.py \
+	-k bracken/$n.bracken \
+	-s1 $n\_paired_1.fastq \
+	-s2 $n\_paired_2.fastq \
+	-o SD2112_hits/$n\_paired_1.SD2112.bracken.fastq \
+	-o2 SD2112_hits/$n\_paired_2.SD2112.bracken.fastq \
+	--report kraken2/$n.kreport \
+	--fastq-output \
+	--noappend \
+	--taxid 491077 \
+	--include-children
+
+	lbzip2 -v $n\_paired_1.fastq;
+	lbzip2 -v $n\_paired_2.fastq;
+done
+
+
+
+
+
+
+###############KRAKEN2 AGAIN################
+#NOTE: Now we rerun kraken2 again on the human filtered fastq files
+
+#kraken2 \
+#--paired \
+#--db /media/jochum00/Jochum_Raid/standard_k2_db/ \
+#--threads 24 \
+#--output 23862_6.paired.std.filt.kraken2 \
+#--report 23862_6.paired.std.filt.kreport \
+#23862_6.paired.std.k2_human_phix_filtered.1.fastq \
+#23862_6.paired.std.k2_human_phix_filtered.2.fastq 
+
+#####################################################
+#grep 'Homo' 23862_6.paired.std.filt.kreport
+#done
+
+
+##############KREPORT2MPA############
+#NOTE: Now we convert the bracken report to mpa style
+kreport2mpa.py \
+-r 23862_6.paired.std.filt.breport \
+-o 23862_6.paired.std.filt.mpa.percentages.breport \
+--display-header \
+--percentages \
+--no-intermediate-ranks
+
+############COMBINE_MPA_REPORT########################
+
+
+
+
+
+
+
